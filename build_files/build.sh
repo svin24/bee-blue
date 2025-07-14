@@ -19,13 +19,14 @@ rpm --import https://packages.microsoft.com/keys/microsoft.asc
 echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\nautorefresh=1\ntype=rpm-md\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
 
 # Brave
-sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
-
+# dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
+# dnf5 install -y brave-keyring
+# dnf5 install -y brave-browser
 dnf5 install -y tmux curl neovim ripgrep fd-find distrobox cargo rustup golang 
-dnf5 -y swap  ffmpeg ffmpeg-free --allowerasing
+dnf5 swap -y ffmpeg ffmpeg-free --allowerasing
 dnf5 install -y haruna okular 
 dnf5 install -y yt-dlp steam
-dnf5 install -y code brave-browser
+dnf5 install -y code
 
 # Use a COPR Example:
 #
