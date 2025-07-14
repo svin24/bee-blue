@@ -22,8 +22,9 @@ echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com
 sudo dnf config-manager addrepo --from-repofile=https://brave-browser-rpm-release.s3.brave.com/brave-browser.repo
 
 dnf5 install -y tmux curl neovim ripgrep fd-find distrobox cargo rustup golang 
+dnf5 -y swap  ffmpeg ffmpeg-free --allowerasing
 dnf5 install -y haruna okular 
-dnf5 install -y yt-dlp ffmpeg-full steam
+dnf5 install -y yt-dlp steam
 dnf5 install -y code brave-browser
 
 # Use a COPR Example:
